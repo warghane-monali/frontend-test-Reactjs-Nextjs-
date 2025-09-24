@@ -6,29 +6,29 @@
 
 ## 2.ER Diagram Visualization(Entities and Attributes)
 
-  ## 1.Patient
-    PatientID (PK)
-    Name
-    MobileNumber
-    WhatsAppNumber
-    Email
-    Address
+      ## 1.Patient
+        PatientID (PK)
+        Name
+        MobileNumber
+        WhatsAppNumber
+        Email
+        Address
+    
+      ## 2.Session
+        SessionID (PK)
+        PatientID (FK → Patient.PatientID)
+        Date
+        TimeSlotID (FK → TimeSlot.TimeSlotID)
+        SessionTypeID (FK → SessionType.SessionTypeID)
+    
+      ## 3.TimeSlot
+        TimeSlotID (PK)
+    
+      ## 4.SessionType
+        SessionTypeID (PK)
+        TypeName (e.g., "In-Person", "Online")
 
-  ## 2.Session
-    SessionID (PK)
-    PatientID (FK → Patient.PatientID)
-    Date
-    TimeSlotID (FK → TimeSlot.TimeSlotID)
-    SessionTypeID (FK → SessionType.SessionTypeID)
-
-  ## 3.TimeSlot
-    TimeSlotID (PK)
-
-  ## 4.SessionType
-    SessionTypeID (PK)
-    TypeName (e.g., "In-Person", "Online")
-
-## 2.Implementation Details
+## 3.Implementation Details
 
     1. Frameworks / Libraries Used:
         ReactJS, NextJS, TailwindCss
@@ -39,7 +39,7 @@
     4.Animations & Interactivity:
         JS events and CSS animations applied to improve UX
   
-## 3.Project Folder structure
+## 4.Project Folder structure
 
     PATIENT-MANAGEMENT
         |--->PUBLIC
@@ -63,7 +63,7 @@
                   |--->PAGE.JS
                   |--->LAYOUT.JS
                 
-## How to Run
+## 5.How to Run
     1. Clone the repository:
        ```bash
       git clone <repo-url>
@@ -72,8 +72,15 @@
     
     Open http://localhost:3000 to view.
 
-## Screens
+## 6.Screens
      http://localhost:3000/dashboard
      http://localhost:3000/doctors
      http://localhost:3000/patientSchedule
      http://localhost:3000/patientDetails
+     
+## 7.Page load time
+    Tested on https://pagespeed.web.dev/
+        1.Mobile
+            https://pagespeed.web.dev/analysis/https-frontend-test-reactjs-nextjs-netlify-app-dashboard/vrcexzc6cf?form_factor=mobile
+        2.Dekstop
+            https://pagespeed.web.dev/analysis/https-frontend-test-reactjs-nextjs-netlify-app-dashboard/vrcexzc6cf?form_factor=desktop
