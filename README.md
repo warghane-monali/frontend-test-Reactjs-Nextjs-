@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Frontend Development Assessment - ReactJS + NextJS
 
-## Getting Started
+## 1.Figma Design Reference
 
-First, run the development server:
+    -https://www.figma.com/design/9rXDHVD1na0Smz16eKDEnL/Frontend-Test?node-id=169-62&t=20tj1IxgjBRHgGnF-0
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 2.ER Diagram Visualization(Entities and Attributes)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  ## 1.Patient
+    PatientID (PK)
+    Name
+    MobileNumber
+    WhatsAppNumber
+    Email
+    Address
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+  ## 2.Session
+    SessionID (PK)
+    PatientID (FK → Patient.PatientID)
+    Date
+    TimeSlotID (FK → TimeSlot.TimeSlotID)
+    SessionTypeID (FK → SessionType.SessionTypeID)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  ## 3.TimeSlot
+    TimeSlotID (PK)
 
-## Learn More
+  ## 4.SessionType
+    SessionTypeID (PK)
+    TypeName (e.g., "In-Person", "Online")
 
-To learn more about Next.js, take a look at the following resources:
+## 2.Implementation Details
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    1. Frameworks / Libraries Used:
+        ReactJS, NextJS, TailwindCss
+    2.Routing:
+        NextJS built-in routing system(folder based)
+    3.Responsive Design:
+        Implemented for Web and Mobile screens
+    4.Animations & Interactivity:
+        JS events and CSS animations applied to improve UX
+  
+## 3.Project Folder structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    PATIENT-MANAGEMENT
+        |--->PUBLIC
+                |--->ASSETS
+        |--->SRC
+             |--->APP
+                   |--->COMPONENTS
+                          |--->BUTTONS.JS
+                          |--->MOBILEWRAPPER.JS
+                          |--->PASTSESSIONS.JS
+                          |--->SESSIONTIMEMODAL.JS
+                          |--->UPCOMMINGSESSIONS.JS
+                  |--->DASHBOARD.JS
+                            |--->PAGE.JS
+                  |--->DOCTORS.JS
+                            |--->PAGE.JS
+                  |--->PATIENTDETAILS.JS'
+                            |--->PAGE.JS
+                  |--->PATIENTSCHEDULE.JS
+                            |--->PAGE.JS
+                  |--->PAGE.JS
+                  |--->LAYOUT.JS
+                
+## How to Run
+    1. Clone the repository:
+       ```bash
+      git clone <repo-url>
+      npm install
+      npm run dev
+    
+    Open http://localhost:3000 to view.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Screens
+     http://localhost:3000/dashboard
+     http://localhost:3000/doctors
+     http://localhost:3000/patientSchedule
+     http://localhost:3000/patientDetails
